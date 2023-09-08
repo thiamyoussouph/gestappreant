@@ -10,33 +10,33 @@
 <div class="col-5">
     <div class="card m-2 ">
         <div class="card-header">
-            <h3 class="text-center text-success">Formulaire d'ajout</h3>
+            <h3 class="text-center text-success">modifier {{$apprenant->nom}}</h3>
         </div>
         <div class="card-body">
-<form class="m-2" action='{{route("apprenants.create")}}' method="POST">
+<form class="m-2" action='{{route("apprenants.update")}}' method="POST">
 @csrf
     
     <div class="mb-3">
       <label for="disabledTextInput" class="form-label">nom</label>
-      <input type="text" id="disabledTextInput" class="form-control" name="nom" >
+      <input type="text" id="disabledTextInput" class="form-control" name="nom" value="{{$apprenant->nom}}" >
     </div>
     <div class="mb-3">
       <label for="disabledTextInput" class="form-label">Prenom</label>
-      <input type="text" id="disabledTextInput" class="form-control" name="prenom" >
+      <input type="text" id="disabledTextInput" class="form-control" name="prenom" value="{{$apprenant->prenom}}">
     </div>
     <div class="mb-3">
       <label for="disabledTextInput" class="form-label">adresse</label>
-      <input type="text" id="disabledTextInput" class="form-control" name="adresse" >
+      <input type="text" id="disabledTextInput" class="form-control" name="adresse"value="{{$apprenant->adresse}}" >
     </div>
     <div class="mb-3">
       <label for="disabledTextInput" class="form-label">telephone</label>
-      <input type="text" id="disabledTextInput" class="form-control"name="telephone" >
+      <input type="text" id="disabledTextInput" class="form-control"name="telephone"value="{{$apprenant->telephone}}" >
     </div>
     <div class="mb-3">
-      <label for="disabledTextInput" class="form-label">telephone</label>
-      <input type="text" id="disabledTextInput" class="form-control"name="email" >
+      <label for="disabledTextInput" class="form-label">e-mail</label>
+      <input type="text" id="disabledTextInput" class="form-control"name="email" value="{{$apprenant->email}}">
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">modifier</button>
   
 </form>
 </div>

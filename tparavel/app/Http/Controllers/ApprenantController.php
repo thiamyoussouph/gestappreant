@@ -34,6 +34,7 @@ class ApprenantController extends Controller
         $apprenant->prenom = $request->prenom;
         $apprenant->adresse = $request->adresse;
         $apprenant->telephone = $request->telephone;
+        $apprenant->email = $request->email;
         $apprenant->save();
         return redirect()->route('apprenants.index');
 
@@ -44,7 +45,8 @@ class ApprenantController extends Controller
      */
     public function show(apprenant $apprenant)
     {
-        //
+        $apprenant = apprenant::find($apprenant->id);   
+        return view('apprenants.detail', compact('apprenant'));
     }
 
     /**
@@ -52,7 +54,8 @@ class ApprenantController extends Controller
      */
     public function edit(apprenant $apprenant)
     {
-        //
+        $apprenant = apprenant::find($apprenant->id);   
+        return view('apprenants.editer', compact('apprenant'));
     }
 
     /**
@@ -60,7 +63,13 @@ class ApprenantController extends Controller
      */
     public function update(Request $request, apprenant $apprenant)
     {
-        //
+        $apprenant->nom = $request->nom;
+        $apprenant->prenom = $request->prenom;
+        $apprenant->adresse = $request->adresse;
+        $apprenant->telephone = $request->telephone;
+        $apprenant->email = $request->email;
+        $apprenant->save();
+        return redirect()->route('apprenants.index');
     }
 
     /**
@@ -68,6 +77,7 @@ class ApprenantController extends Controller
      */
     public function destroy(apprenant $apprenant)
     {
-        //
+        $apprenant->delete();
+        return redirect()->route('apprenants.index');
     }
 }

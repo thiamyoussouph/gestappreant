@@ -9,7 +9,7 @@ use App\Http\Controllers\ApprenantController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
+| routes are l-oaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
 */
@@ -21,5 +21,6 @@ Route::get("/apprenants", [ApprenantController::class, "index"])->name("apprenan
 Route::post("/create", [ApprenantController::class, "store"])->name("apprenants.create");
 Route::get("/editer/{apprenant}", [ApprenantController::class, "edit"])->name("apprenants.edit");
 Route::get("/suprimer/{apprenant}", [ApprenantController::class, "destroy"])->name("apprenants.suprimer");
-Route::get("/modifier/{apprenant}", [ApprenantController::class, "update"])->name("apprenants.update");
-Route::get("/ajouter", [ApprenantController::class, "create"])->name("apprenants.form");
+Route::post("/modifier/{apprenant}", [ApprenantController::class, "update"])->name("apprenants.update");
+Route::get("/detail/{apprenant}", [ApprenantController::class, "show"])->name("apprenants.detail");
+Route::get("/ajouter", [ApprenantController::class, "create"])->name("apprenants.ajouter");

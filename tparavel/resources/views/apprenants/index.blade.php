@@ -31,7 +31,9 @@
       <td>{{$apprenant->telephone}}</td>
       <td>
         <a href="{{route('apprenants.edit',$apprenant->id)}}" class="btn btn-primary">editer</a>
+        <a href="{{route('apprenants.detail',$apprenant->id)}}" class="btn btn-info">detail</a>
         <a href="{{route('apprenants.suprimer',$apprenant->id)}}" class="btn btn-danger">suprimer</a>
+       
       </td>
     </tr>
     @endforeach
